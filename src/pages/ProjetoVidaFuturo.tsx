@@ -5,53 +5,26 @@ import { BookOpen, Users, Clock, Award, Target, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ProjetoVidaFuturo = () => {
-  const cursos = [
+  const motivacoes = [
     {
-      nome: "Informática Básica",
-      duracao: "3 meses",
-      descricao: "Aprenda os fundamentos da informática, navegação na internet e ferramentas básicas.",
+      titulo: "Amor em Ação",
+      descricao: "Levamos cuidado prático às famílias, com alimentos, roupas e apoio emocional. O amor de Cristo precisa ser visto e sentido em atitudes que alcançam o próximo.",
+      icone: Heart
+    },
+    {
+      titulo: "Palavra que Transforma",
+      descricao: "Acreditamos que toda mudança verdadeira começa com o evangelho. Por isso, cada ação está enraizada na Palavra de Deus, que gera fé, esperança e vida nova.",
       icone: BookOpen
     },
     {
-      nome: "Artesanato",
-      duracao: "2 meses", 
-      descricao: "Desenvolva suas habilidades manuais e crie produtos únicos.",
-      icone: Heart
-    },
-    {
-      nome: "Culinária",
-      duracao: "2 meses",
-      descricao: "Técnicas culinárias básicas e receitas para empreender ou uso pessoal.",
-      icone: Target
-    },
-    {
-      nome: "Costura",
-      duracao: "4 meses",
-      descricao: "Do básico ao avançado, aprenda a costurar e criar suas próprias peças.",
-      icone: Award
-    }
-  ];
-
-  const beneficios = [
-    {
-      titulo: "100% Gratuito",
-      descricao: "Todos os cursos são oferecidos sem nenhum custo para a comunidade.",
-      icone: Heart
-    },  
-    {
-      titulo: "Certificado",
-      descricao: "Receba certificado de conclusão reconhecido ao final do curso.",
-      icone: Award
-    },
-    {
-      titulo: "Instrutores Qualificados", 
-      descricao: "Professores experientes e dedicados ao ensino de qualidade.",
+      titulo: "Comunidade e Esperança",
+      descricao: "Não caminhamos sozinhos. Criamos espaços de acolhimento e comunhão, fortalecendo vínculos e oferecendo novas perspectivas para famílias e jovens.",
       icone: Users
     },
     {
-      titulo: "Horários Flexíveis",
-      descricao: "Diversas opções de horários para se adequar à sua rotina.",
-      icone: Clock
+      titulo: "Serviço e Futuro",
+      descricao: "Servimos hoje acreditando que o futuro pode ser diferente. Cada gesto de solidariedade é uma semente plantada em fé, que dará frutos para a glória de Deus.",
+      icone: Target
     }
   ];
 
@@ -64,85 +37,91 @@ const ProjetoVidaFuturo = () => {
             Projeto Vida & Futuro
           </Badge>
           <h1 className="text-4xl lg:text-5xl font-bold text-church-primary">
-            Capacitando pessoas para o futuro
+            Transformando vidas com fé e esperança
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            O <strong>Projeto Vida & Futuro</strong> nasceu no coração da Igreja com um propósito especial: 
-            <strong> capacitar e transformar vidas</strong> por meio da educação e do aprendizado. 
-            Acreditamos que o conhecimento é uma ferramenta poderosa para abrir portas e criar novas oportunidades, 
-            por isso, oferecemos cursos <strong>100% gratuitos</strong> para a comunidade.
+            O <strong>Projeto Vida e Futuro</strong> é uma iniciativa da nossa igreja que nasce do desejo de levar esperança, 
+            cuidado e transformação para além das quatro paredes do templo. Ele une fé e ação prática, buscando atender 
+            não apenas às necessidades espirituais, mas também sociais e emocionais de pessoas e famílias da nossa comunidade.
           </p>
         </div>
 
-        {/* Objetivo */}
+        {/* O que é o projeto */}
+        <div className="mb-16">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl lg:text-3xl font-bold text-church-primary mb-6 text-center">
+              O que é o Projeto Vida e Futuro?
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed text-center mb-8">
+              O Projeto Vida e Futuro é uma iniciativa da nossa igreja que nasce do desejo de levar esperança, 
+              cuidado e transformação para além das quatro paredes do templo. Ele une fé e ação prática, buscando 
+              atender não apenas às necessidades espirituais, mas também sociais e emocionais de pessoas e famílias 
+              da nossa comunidade.
+            </p>
+          </div>
+        </div>
+
+        {/* Como começou */}
         <div className="bg-gradient-warm rounded-2xl p-8 lg:p-12 mb-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl lg:text-3xl font-bold text-church-dark mb-4">
-              Nosso Objetivo
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl lg:text-3xl font-bold text-church-dark mb-6 text-center">
+              Como o projeto começou?
             </h2>
-            <p className="text-lg text-church-dark/80 leading-relaxed">
-              Proporcionar formação em áreas essenciais, tanto para o crescimento profissional 
-              quanto para o bem estar social. Queremos ver vidas transformadas através do conhecimento 
-              e da oportunidade de desenvolver novas habilidades.
+            <p className="text-lg text-church-dark/80 leading-relaxed text-center mb-4">
+              O projeto surgiu da percepção de que muitas pessoas precisam mais do que palavras, precisam de acolhimento, 
+              orientação e oportunidades. A igreja entendeu que não bastava apenas oferecer culto e ensino, mas também 
+              criar pontes reais que conectem a Palavra de Deus à vida prática.
+            </p>
+            <p className="text-lg font-semibold text-church-dark text-center">
+              Assim nasceu o Projeto Vida e Futuro: uma resposta ao chamado de ser igreja no cotidiano.
             </p>
           </div>
         </div>
 
-        {/* Cursos Oferecidos */}
+        {/* Nossa Visão */}
         <div className="mb-16">
-          <div className="text-center space-y-4 mb-12">
+          <div className="text-center space-y-6 mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-church-primary">
-              Cursos Oferecidos
+              Nossa Visão
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Conheça os cursos disponíveis e encontre aquele que mais se adequa aos seus objetivos.
+            <p className="text-xl font-semibold text-church-secondary">
+              Servir hoje, construindo o amanhã
             </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {cursos.map((curso, index) => {
-              const IconComponent = curso.icone;
-              return (
-                <Card key={index} className="text-center hover:shadow-elegant transition-shadow">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="h-6 w-6 text-white" />
-                    </div>
-                    <CardTitle className="text-lg">{curso.nome}</CardTitle>
-                    <Badge variant="secondary" className="mx-auto">
-                      {curso.duracao}
-                    </Badge>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription className="text-sm">
-                      {curso.descricao}
-                    </CardDescription>
-                  </CardContent>
-                </Card>
-              );
-            })}
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              O Projeto Vida e Futuro nasceu com o propósito de unir fé e ação, levando o amor de Cristo para dentro da comunidade. 
+              Queremos ser instrumentos de transformação espiritual e social, mostrando que em Jesus sempre há esperança e um futuro melhor.
+            </p>
+            <blockquote className="text-lg italic text-church-primary font-medium max-w-2xl mx-auto border-l-4 border-church-primary pl-6 my-8">
+              "Porque eu bem sei os pensamentos que tenho a vosso respeito, diz o Senhor; pensamentos de paz, 
+              e não de mal, para vos dar o fim que desejais."
+              <footer className="text-sm mt-2 text-muted-foreground">— Jeremias 29:11</footer>
+            </blockquote>
           </div>
         </div>
 
-        {/* Benefícios */}
+        {/* O que nos move */}
         <div className="mb-16">
           <div className="text-center space-y-4 mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-church-primary">
-              Por que escolher nossos cursos?
+              O Que Nos Move
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {beneficios.map((beneficio, index) => {
-              const IconComponent = beneficio.icone;
+          <div className="grid md:grid-cols-2 gap-6">
+            {motivacoes.map((motivacao, index) => {
+              const IconComponent = motivacao.icone;
               return (
-                <Card key={index} className="text-center p-6 hover:shadow-soft transition-shadow">
+                <Card key={index} className="p-6 hover:shadow-elegant transition-shadow">
                   <CardContent className="space-y-4 p-0">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center mx-auto">
-                      <IconComponent className="h-8 w-8 text-white" />
+                    <div className="flex items-start space-x-4">
+                      <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold mb-2">{motivacao.titulo}</h3>
+                        <p className="text-muted-foreground leading-relaxed">{motivacao.descricao}</p>
+                      </div>
                     </div>
-                    <h3 className="text-lg font-semibold">{beneficio.titulo}</h3>
-                    <p className="text-sm text-muted-foreground">{beneficio.descricao}</p>
                   </CardContent>
                 </Card>
               );
@@ -150,55 +129,35 @@ const ProjetoVidaFuturo = () => {
           </div>
         </div>
 
-        {/* Como Participar */}
+        {/* Olhar para o futuro */}
         <div className="bg-muted/50 rounded-2xl p-8 lg:p-12 mb-16">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h2 className="text-2xl lg:text-3xl font-bold text-church-primary">
-              Como Participar?
+              Olhar para o futuro
             </h2>
-            <div className="grid md:grid-cols-3 gap-6 text-left">
-              <div className="space-y-2">
-                <div className="w-8 h-8 bg-church-primary text-white rounded-full flex items-center justify-center font-bold">
-                  1
-                </div>
-                <h3 className="font-semibold">Entre em Contato</h3>
-                <p className="text-sm text-muted-foreground">
-                  Entre em contato conosco através do formulário ou telefone para se inscrever.
-                </p>
-              </div>
-              <div className="space-y-2">
-                <div className="w-8 h-8 bg-church-primary text-white rounded-full flex items-center justify-center font-bold">
-                  2
-                </div>
-                <h3 className="font-semibold">Escolha seu Curso</h3>
-                <p className="text-sm text-muted-foreground">
-                  Informe qual curso você tem interesse e verificaremos a disponibilidade.
-                </p>
-              </div>
-              <div className="space-y-2">
-                <div className="w-8 h-8 bg-church-primary text-white rounded-full flex items-center justify-center font-bold">
-                  3
-                </div>
-                <h3 className="font-semibold">Comece a Aprender</h3>
-                <p className="text-sm text-muted-foreground">
-                  Participe das aulas e desenvolva novas habilidades para o seu futuro.
-                </p>
-              </div>
-            </div>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              O nome do projeto não é por acaso: acreditamos que em Cristo sempre há futuro. Por isso, nosso desejo é ampliar 
+              o alcance, fortalecer parcerias e envolver cada vez mais pessoas nessa missão.
+            </p>
+            <blockquote className="text-lg italic text-church-primary font-medium border-l-4 border-church-primary pl-6 my-6">
+              "Portanto, meus amados irmãos, sede firmes e constantes, sempre abundantes na obra do Senhor, 
+              sabendo que, no Senhor, o vosso trabalho não é vão."
+              <footer className="text-sm mt-2 text-muted-foreground">— 1 Coríntios 15:58</footer>
+            </blockquote>
           </div>
         </div>
 
         {/* CTA */}
         <div className="bg-gradient-primary rounded-2xl p-8 lg:p-12 text-center text-white">
           <h2 className="text-2xl lg:text-3xl font-bold mb-4">
-            Pronto para transformar seu futuro?
+            Faça parte dessa transformação
           </h2>
           <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">
-            Entre em contato conosco e dê o primeiro passo para desenvolver novas habilidades 
-            e criar novas oportunidades em sua vida.
+            Entre em contato conosco e descubra como você pode ser parte do Projeto Vida e Futuro, 
+            levando esperança e transformação para nossa comunidade.
           </p>
           <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-church-primary">
-            <Link to="/contato">Quero me inscrever</Link>
+            <Link to="/contato">Entre em contato</Link>
           </Button>
         </div>
       </div>
