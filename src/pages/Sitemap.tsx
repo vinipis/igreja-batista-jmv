@@ -10,12 +10,13 @@ const Sitemap = () => {
       icone: Home,
       links: [
         { nome: "Home", url: "/", descricao: "Página inicial com informações gerais da igreja" },
+        { nome: "Quem Somos", url: "/quem-somos", descricao: "Nossa história, missão e valores cristãos" },
         { nome: "Contato", url: "/contato", descricao: "Formulário de contato e informações para entrar em contato" },
         { nome: "Eventos", url: "/eventos", descricao: "Calendário de eventos e atividades da igreja" }
       ]
     },
     {
-      categoria: "Quem Somos",
+      categoria: "Ministérios e Projetos",
       icone: Users,
       links: [
         { nome: "Ministérios", url: "/ministerios", descricao: "Conheça todos os ministérios disponíveis na igreja" },

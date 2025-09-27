@@ -5,8 +5,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Index from "./pages/Index";
+import QuemSomos from "./pages/QuemSomos";
 import Ministerios from "./pages/Ministerios";
-import ProjetVidaFuturo from "./pages/ProjetoVidaFuturo";
+import ProjetoVidaFuturo from "./pages/ProjetoVidaFuturo";
 import SonhoDeNatal from "./pages/SonhoDeNatal";
 import PodcastDepoisDeCristo from "./pages/PodcastDepoisDeCristo";
 import Eventos from "./pages/Eventos";
@@ -25,8 +26,9 @@ const App = () => (
         <Layout>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/quem-somos" element={<QuemSomos />} />
             <Route path="/ministerios" element={<Ministerios />} />
-            <Route path="/projeto-vida-futuro" element={<ProjetVidaFuturo />} />
+            <Route path="/projeto-vida-futuro" element={<ProjetoVidaFuturo />} />
             <Route path="/sonho-de-natal" element={<SonhoDeNatal />} />
             <Route path="/podcast-depois-de-cristo" element={<PodcastDepoisDeCristo />} />
             <Route path="/eventos" element={<Eventos />} />

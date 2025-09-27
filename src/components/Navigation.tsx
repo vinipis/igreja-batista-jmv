@@ -43,6 +43,11 @@ const Navigation = () => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="start" className="w-48">
           <DropdownMenuItem asChild>
+            <Link to="/quem-somos" onClick={onClose}>
+              Nossa História
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
             <Link to="/ministerios" onClick={onClose}>
               Ministérios
             </Link>
