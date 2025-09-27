@@ -2,95 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Design System para Igreja Batista JMV
+   Cores oficiais: #9b1d38, #ffffff, #ffc914, #f49d37, #db5461, #27213c, #000000
+   Todas as cores devem estar em HSL para flexibilidade
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Cores principais da igreja */
+    --church-primary: 349 68% 33%; /* #9b1d38 - Vermelho principal */
+    --church-accent-gold: 48 100% 54%; /* #ffc914 - Amarelo dourado */
+    --church-accent-orange: 26 88% 59%; /* #f49d37 - Laranja */
+    --church-accent-rose: 355 58% 61%; /* #db5461 - Rosa avermelhado */
+    --church-dark: 254 29% 15%; /* #27213c - Roxo escuro */
+    --church-white: 0 0% 100%; /* #ffffff - Branco */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Gradientes elegantes */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--church-primary)), hsl(var(--church-accent-rose)));
+    --gradient-warm: linear-gradient(135deg, hsl(var(--church-accent-orange)), hsl(var(--church-accent-gold)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--church-dark)), hsl(var(--church-primary)));
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Sistema de cores semânticas */
+    --background: var(--church-white);
+    --foreground: var(--church-dark);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --card: var(--church-white);
+    --card-foreground: var(--church-dark);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --popover: var(--church-white);
+    --popover-foreground: var(--church-dark);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --primary: var(--church-primary);
+    --primary-foreground: var(--church-white);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --secondary: 349 20% 95%;
+    --secondary-foreground: var(--church-dark);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --muted: 349 15% 96%;
+    --muted-foreground: 349 20% 45%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --accent: var(--church-accent-gold);
+    --accent-foreground: var(--church-dark);
 
-    --radius: 0.5rem;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--church-white);
 
-    --sidebar-background: 0 0% 98%;
+    --border: 349 20% 90%;
+    --input: 349 20% 90%;
+    --ring: var(--church-primary);
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --radius: 0.75rem;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Sombras elegantes */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--church-primary) / 0.2);
+    --shadow-warm: 0 8px 25px -8px hsl(var(--church-accent-gold) / 0.3);
+    --shadow-soft: 0 4px 20px -4px hsl(var(--church-dark) / 0.1);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Transições suaves */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: var(--church-dark);
+    --foreground: var(--church-white);
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 254 29% 18%;
+    --card-foreground: var(--church-white);
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: var(--church-dark);
+    --popover-foreground: var(--church-white);
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--church-accent-gold);
+    --primary-foreground: var(--church-dark);
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 254 20% 25%;
+    --secondary-foreground: var(--church-white);
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 254 15% 20%;
+    --muted-foreground: 254 20% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: var(--church-accent-orange);
+    --accent-foreground: var(--church-dark);
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 254 20% 30%;
+    --input: 254 20% 30%;
+    --ring: var(--church-accent-gold);
   }
 }
 
@@ -101,5 +98,62 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+    line-height: 1.2;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-church-primary/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-church-primary;
+  }
+
+  /* Loading animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-in-up {
+    animation: slideInUp 0.8s ease-out;
   }
 }
