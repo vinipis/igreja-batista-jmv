@@ -69,7 +69,6 @@ const Contato = () => {
         throw new Error("Erro ao enviar mensagem");
       }
       
-      
       toast({
         title: "Mensagem enviada com sucesso!",
         description: "Entraremos em contato em breve. Que Deus abençoe!",
