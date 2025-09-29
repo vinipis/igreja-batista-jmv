@@ -59,7 +59,7 @@ const Contato = () => {
       // Simular envio (aqui seria integrado com AWS SES ou similar)
       //await new Promise(resolve => setTimeout(resolve, 2000));
 
-      const response = await fetch("api/contact",{
+      const response = await fetch("/api/contact",{
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(validatedData),
