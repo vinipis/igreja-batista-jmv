@@ -1,21 +1,25 @@
 services:
   web:
-    build: ./web
+    build:
+      context: /home/ubuntu/igreja-batista-jmv
+      dockerfile: infra/web/Dockerfile
     depends_on:
       - api
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      # certificados Let's Encrypt (persistentes no host)
       - /etc/letsencrypt:/etc/letsencrypt
       - /var/www/certbot:/var/www/certbot
+      - /home/ubuntu/igreja-batista-jmv/infra/web/nginx.http.conf:/etc/nginx/nginx.conf:ro
     environment:
       - SERVER_NAME=${SERVER_NAME}
     restart: unless-stopped
 
   api:
-    build: ./api
+    build:
+      context: /home/ubuntu/igreja-batista-jmv
+      dockerfile: infra/api/Dockerfile
     environment:
       - NODE_ENV=production
       - PORT=3000
