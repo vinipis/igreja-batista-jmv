@@ -1,14 +1,12 @@
-# 1) build do front (Vite)
 FROM node:18-alpine AS build
 WORKDIR /app
-COPY package*.json ./
-RUN npm ci
+# copie os manifests primeiro para aproveitar cache
+COPY package.json ./
+# se você tiver package-lock.json no futuro, adicione a linha abaixo:
+# COPY package-lock.json ./
+RUN npm install
+# agora copie o resto do projeto
 COPY . .
+# build do front
 RUN npm run build
 
-# 2) nginx para servir o build e proxy da API
-FROM nginx:alpine
-RUN mkdir -p /var/www/certbot
-COPY infra/web/nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/dist /usr/share/nginx/html
-HEALTHCHECK CMD wget -q -O - http://localhost/ || exit 1
