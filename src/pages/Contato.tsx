@@ -57,7 +57,18 @@ const Contato = () => {
       const validatedData = contactSchema.parse(formData);
       
       // Simular envio (aqui seria integrado com AWS SES ou similar)
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      //await new Promise(resolve => setTimeout(resolve, 2000));
+
+      const response = await fetch("api/contact",{
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(validatedData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erro ao enviar mensagem");
+      }
+      
       
       toast({
         title: "Mensagem enviada com sucesso!",

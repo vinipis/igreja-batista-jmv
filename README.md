@@ -1,73 +1,85 @@
-# Welcome to your Lovable project
+🌳 Igreja Batista JMV
 
-## Project info
+Este é o repositório do site oficial da Igreja Batista Jardim Maria Virgínia (JMV).
+Nosso desejo é usar a tecnologia para apoiar a missão da igreja: proclamar Jesus, cuidar de pessoas e caminhar juntos em fé.
 
-**URL**: https://lovable.dev/projects/b028512f-fb15-4398-a52d-293f29827bff
+Aqui você vai encontrar todo o código e configurações que fazem o site funcionar.
 
-## How can I edit this code?
+✨ Objetivo
 
-There are several ways of editing your application.
+Compartilhar informações sobre a igreja e seus ministérios
 
-**Use Lovable**
+Divulgar eventos e atividades
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b028512f-fb15-4398-a52d-293f29827bff) and start prompting.
+Facilitar o contato com a secretaria e a liderança
 
-Changes made via Lovable will be committed automatically to this repo.
+Ser um canal de bênção na internet
 
-**Use your preferred IDE**
+🚀 O que usamos por aqui
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Frontend: React + Vite + TailwindCSS
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Backend/API: Node.js (Express)
 
-Follow these steps:
+Infraestrutura: Docker + Docker Compose
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Servidor Web: Nginx
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Certificados SSL: Let's Encrypt
 
-# Step 3: Install the necessary dependencies.
-npm i
+Integração AWS: envio de mensagens de contato via SNS
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+📂 Estrutura básica do projeto
+infra/          # Configurações de infraestrutura (Docker, Nginx, API)
+src/            # Código do frontend (site)
+public/         # Arquivos estáticos (favicon, index.html, imagens)
 
-**Edit a file directly in GitHub**
+▶️ Como rodar localmente
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Se você quiser testar em sua máquina:
 
-**Use GitHub Codespaces**
+git clone https://github.com/vinipis/igreja-batista-jmv.git
+cd igreja-batista-jmv/infra
+docker compose up --build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
+Depois é só abrir:
 
-This project is built with:
+http://localhost
+ → site
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+http://localhost:3000/api
+ → API
 
-## How can I deploy this project?
+🌐 Como publicamos em produção
 
-Simply open [Lovable](https://lovable.dev/projects/b028512f-fb15-4398-a52d-293f29827bff) and click on Share -> Publish.
+No servidor, já temos o .env configurado com as variáveis da AWS e do domínio.
 
-## Can I connect a custom domain to my Lovable project?
+Sempre que precisar atualizar algo no site:
 
-Yes, you can!
+git pull origin main
+docker compose -f infra/docker-compose.yml up -d --build
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+O Certbot já está preparado para renovar automaticamente os certificados SSL.
+
+🤝 Como contribuir
+
+Se você faz parte da igreja e tem dons com tecnologia, design ou comunicação, pode ajudar a melhorar:
+
+Conteúdo e textos do site
+
+Layout e experiência do usuário
+
+Automação e integrações
+
+Toda ajuda é bem-vinda ❤️
+
+📧 Contato
+
+Site: www.igrejabatistajmv.com.br
+
+Email: contato@igrejabatistajmv.com.br
+
+👉 Esse projeto é da igreja para a igreja.
+Que possamos usar a tecnologia como ferramenta para espalhar a mensagem de Cristo 🙏
