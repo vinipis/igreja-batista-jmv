@@ -1,61 +1,64 @@
 const express = require('express');
-const AWS = require('aws-sdk');
 const cors = require('cors');
 const helmet = require('helmet');
-const Joi = require('joi');
+const AWS = require('aws-sdk');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
+// --- Middlewares
 app.use(helmet());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '1mb' })); // body-parser json
+app.use((req, _res, next) => { console.log(`[API] ${req.method} ${req.url}`); next(); });
 
-// CORS apenas do seu domínio (configurado via ALLOW_ORIGIN)
-const allowOrigin = process.env.ALLOW_ORIGIN || '*';
-app.use(cors({ origin: allowOrigin, methods: ['POST','OPTIONS'] }));
+// CORS: permite teu domínio em produção
+const allowOrigin = process.env.ALLOW_ORIGIN || `https://${process.env.SERVER_NAME || ''}`;
+app.use(cors({ origin: allowOrigin, methods: ['POST','GET','OPTIONS'] }));
 
-AWS.config.update({ region: process.env.AWS_REGION || 'us-east-1' });
-const sns = new AWS.SNS({ apiVersion: '2010-03-31' });
+// --- Health
+app.get('/health', (_req, res) => res.status(200).json({ ok: true }));
+
+// --- AWS SNS
+const region = process.env.AWS_REGION;
 const topicArn = process.env.SNS_TOPIC_ARN;
+AWS.config.update({ region });
+const sns = new AWS.SNS();
 
-const schema = Joi.object({
-  nome: Joi.string().min(3).max(120).required(),
-  email: Joi.string().email().required(),
-  assunto: Joi.string().min(3).max(120).required(),
-  telefone: Joi.string().allow('', null),
-  mensagem: Joi.string().min(10).max(5000).required()
-});
-
-app.post('/api/contact', async (req, res) => {
-  const { error, value } = schema.validate(req.body, { abortEarly: false });
-  if (error) return res.status(400).json({ ok: false, errors: error.details });
-
-  const { nome, email, assunto, telefone, mensagem } = value;
-  const text =
-`Nova mensagem do site:
-
-Nome: ${nome}
-Email: ${email}
-Telefone: ${telefone || '-'}
-Assunto: ${assunto}
-
-Mensagem:
-${mensagem}`;
-
+// --- POST /contact (atenção: sem /api)
+app.post('/contact', async (req, res) => {
   try {
-    await sns.publish({
+    const { nome, email, telefone = '', assunto, mensagem } = req.body || {};
+    if (!nome || !email || !assunto || !mensagem) {
+      return res.status(400).json({ error: 'Campos obrigatórios: nome, email, assunto, mensagem' });
+    }
+
+    const subject = `Contato do site - ${assunto}`;
+    const msg = [
+      `Nome: ${nome}`,
+      `Email: ${email}`,
+      `Telefone: ${telefone}`,
+      `Assunto: ${assunto}`,
+      '',
+      mensagem
+    ].join('\n');
+
+    console.log('[SNS] Publicando no tópico:', topicArn);
+    const out = await sns.publish({
       TopicArn: topicArn,
-      Subject: `[Site] ${assunto} - ${nome}`,
-      Message: text
+      Subject: subject,
+      Message: msg,
+      MessageAttributes: {
+        fromSite: { DataType: 'String', StringValue: 'igreja-jmv' }
+      }
     }).promise();
 
-    return res.status(204).send();
-  } catch (e) {
-    console.error('SNS publish error', e);
-    return res.status(502).json({ ok: false });
+    console.log('[SNS] OK:', out.MessageId);
+    return res.status(200).json({ ok: true, id: out.MessageId });
+
+  } catch (err) {
+    console.error('[SNS] ERRO:', err);
+    return res.status(500).json({ error: 'Falha ao enviar mensagem' });
   }
 });
 
-app.get('/api/health', (_, res) => res.json({ ok: true }));
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`API on :${port}`));
+app.listen(PORT, () => console.log(`API on :${PORT}`));
