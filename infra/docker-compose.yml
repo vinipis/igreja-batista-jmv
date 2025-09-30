@@ -8,12 +8,14 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    environment:
+      - SERVER_NAME=${SERVER_NAME}
+      - TZ=America/Sao_Paulo
     volumes:
+      - /etc/localtime:/etc/localtime:ro     # herda timezone do host
       - /etc/letsencrypt:/etc/letsencrypt
       - /var/www/certbot:/var/www/certbot
       - /home/ubuntu/igreja-batista-jmv/infra/web/default.https.conf:/etc/nginx/conf.d/default.conf:ro
-    environment:
-      - SERVER_NAME=${SERVER_NAME}
     restart: unless-stopped
 
   api:
@@ -28,6 +30,9 @@ services:
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - SNS_TOPIC_ARN=${SNS_TOPIC_ARN}
       - ALLOW_ORIGIN=https://${SERVER_NAME}
+      - TZ=America/Sao_Paulo
+    volumes:
+      - /etc/localtime:/etc/localtime:ro     # herda timezone do host
     expose:
       - "3000"
     restart: unless-stopped
