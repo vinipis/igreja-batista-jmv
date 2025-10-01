@@ -10,9 +10,18 @@ import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 
+// no topo do arquivo
+const GA_MEASUREMENT_ID = "G-2C9348S1JX"; // seu ID (opcional no event)
+
+// helper
 const track = (name: string, params?: Record<string, any>) => {
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", name, params || {});
+  const w = window as any;
+  if (typeof window !== "undefined" && w.gtag) {
+    const payload = { ...(params || {}), debug_mode: true, send_to: GA_MEASUREMENT_ID };
+    console.debug("[GA4] event:", name, payload);
+    w.gtag("event", name, payload);
+  } else {
+    console.warn("[GA4] gtag ainda não disponível");
   }
 };
 
