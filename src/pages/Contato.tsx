@@ -10,6 +10,12 @@ import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 
+const track = (name: string, params?: Record<string, any>) => {
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    (window as any).gtag("event", name, params || {});
+  }
+};
+
 const Contato = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -68,7 +74,15 @@ const Contato = () => {
       if (!response.ok) {
         throw new Error("Erro ao enviar mensagem");
       }
-      
+
+      // 3. evento GA4
+      track("form_submitted", {
+        form_name: "contato",
+        subject: validatedData.assunto,
+        has_phone: Boolean(validatedData.telefone),
+      });
+
+      // 4. feedback p/ usuário
       toast({
         title: "Mensagem enviada com sucesso!",
         description: "Entraremos em contato em breve. Que Deus abençoe!",
