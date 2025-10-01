@@ -85,11 +85,14 @@ const Contato = () => {
       }
 
       // 3. evento GA4
-      track("form_submitted", {
-        form_name: "contato",
-        subject: validatedData.assunto,
-        has_phone: Boolean(validatedData.telefone),
-      });
+      const track = (name: string, params?: Record<string, any>) => {
+        if (typeof window !== "undefined" && (window as any).gtag) {
+          console.log("[GA4] event:", name, params); // ajuda a ver no console
+          (window as any).gtag("event", name, params || {});
+        } else {
+          console.warn("[GA4] gtag não disponível no window");
+        }
+      };
 
       // 4. feedback p/ usuário
       toast({
