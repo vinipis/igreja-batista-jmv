@@ -18,11 +18,16 @@ services:
       - /home/ubuntu/igreja-batista-jmv/infra/web/default.https.conf:/etc/nginx/conf.d/default.conf:ro
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1/api/health >/dev/null 2>&1 || exit 1"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
-      start_period: 10s
+      test: ["CMD-SHELL", "curl -fsS http://127.0.0.1/health >/dev/null || exit 1"]
+      interval: 240s
+      timeout: 2s
+      retries: 5
+      start_period: 120s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   api:
     build:
