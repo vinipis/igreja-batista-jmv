@@ -321,7 +321,7 @@ const Contato = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   Estamos localizados no Jardim Maria Virginia, região de fácil acesso por transporte público e particular.
                 </p>
-                <a href="https://www.google.com/maps?q=-23.6373827,-46.7653526" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.google.com/maps?q=-23.6377602,-46.7659019,18.88z" target="_blank" rel="noopener noreferrer">
                   <Button variant="outline" className="w-full">
                     <MapPin className="h-4 w-4 mr-2" />
                     Ver no Google Maps
