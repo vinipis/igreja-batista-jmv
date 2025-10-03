@@ -284,7 +284,7 @@ const Contato = () => {
                   <Mail className="h-5 w-5 text-church-primary flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold">Email</h3>
-                    <p className="text-muted-foreground text-sm">contato@igrejabatistajmv.com.br</p>
+                    <p className="text-muted-foreground text-sm">igreja.batistajmv@gmail.com</p>
                   </div>
                 </div>
               </CardContent>
@@ -301,15 +301,11 @@ const Contato = () => {
               <CardContent className="space-y-3">
                 <div className="flex justify-between items-center">
                   <span className="font-medium">Domingos</span>
-                  <span className="text-muted-foreground">9h (EBD) • 18h (Culto)</span>
+                  <span className="text-muted-foreground">10 horas</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="font-medium">Quartas-feiras</span>
-                  <span className="text-muted-foreground">19h30 (Oração)</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-medium">Secretaria</span>
-                  <span className="text-muted-foreground">Seg-Sex: 9h às 17h</span>
+                  <span className="font-medium">Pequenos Grupos</span>
+                  <span className="text-muted-foreground">Quinzenalmnete</span>
                 </div>
               </CardContent>
             </Card>
@@ -325,10 +321,12 @@ const Contato = () => {
                 <p className="text-sm text-muted-foreground mb-4">
                   Estamos localizados no Jardim Maria Virginia, região de fácil acesso por transporte público e particular.
                 </p>
-                <Button variant="outline" className="w-full">
-                  <MapPin className="h-4 w-4 mr-2" />
-                  Ver no Google Maps
-                </Button>
+                <a href="https://www.google.com/maps?q=-23.550520,-46.633308" target="_blank" rel="noopener noreferrer">
+                  <Button variant="outline" className="w-full">
+                    <MapPin className="h-4 w-4 mr-2" />
+                    Ver no Google Maps
+                  </Button>
+                </a>
               </CardContent>
             </Card>
 

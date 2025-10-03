@@ -223,7 +223,7 @@ const Eventos = () => {
                   </div>
                   <div className="flex items-center">
                     <Clock className="h-4 w-4 mr-2 text-church-primary" />
-                    <span>Quartas: 19h30 (Oração)</span>
+                    <span>Pequenos Grupos: Encontros Quinzenais</span>
                   </div>
                 </div>
               </div>

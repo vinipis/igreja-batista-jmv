@@ -91,14 +91,13 @@ const Footer = () => {
               
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 text-church-gold flex-shrink-0" />
-                <span className="text-sm text-church-white/70">contato@igrejabatistajmv.com.br</span>
+                <span className="text-sm text-church-white/70">igreja.batistajmv@gmail.com</span>
               </div>
               
               <div className="flex items-start space-x-2">
                 <Clock className="h-4 w-4 mt-1 text-church-gold flex-shrink-0" />
                 <div className="text-sm text-church-white/70">
-                  <p>Domingos: 9h e 18h</p>
-                  <p>Quartas: 19h30</p>
+                  <p>Domingos: 10 horas</p>
                 </div>
               </div>
             </div>
