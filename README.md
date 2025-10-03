@@ -79,7 +79,7 @@ Toda ajuda é bem-vinda ❤️
 
 Site: www.igrejabatistajmv.com.br
 
-Email: contato@igrejabatistajmv.com.br
+Email: igreja.batistajmv@gmail.com
 
 👉 Esse projeto é da igreja para a igreja.
 Que possamos usar a tecnologia como ferramenta para espalhar a mensagem de Cristo 🙏
