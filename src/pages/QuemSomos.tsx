@@ -167,10 +167,10 @@ const QuemSomos = () => {
             Você é sempre bem-vindo em nossa comunidade!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-church-primary">
+            <Button asChild size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-church-primary">
               <Link to="/contato">Entre em contato</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-church-primary">
+            <Button asChild size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-church-primary">
               <Link to="/ministerios">Conheça nossos ministérios</Link>
             </Button>
           </div>

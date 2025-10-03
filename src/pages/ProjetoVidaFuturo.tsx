@@ -156,7 +156,7 @@ const ProjetoVidaFuturo = () => {
             Entre em contato conosco e descubra como você pode ser parte do Projeto Vida e Futuro, 
             levando esperança e transformação para nossa comunidade.
           </p>
-          <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-church-primary">
+          <Button asChild size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-church-primary">
             <Link to="/contato">Entre em contato</Link>
           </Button>
         </div>

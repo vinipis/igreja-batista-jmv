@@ -123,7 +123,7 @@ const Ministerios = () => {
             para servir a Deus e abençoar vidas em nossa comunidade.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-church-primary">
+            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-black hover:text-church-primary">
               <Link to="/contato">Entre em Contato</Link>
             </Button>
             <Button asChild size="lg" className="bg-church-gold text-church-dark hover:bg-church-gold/90">

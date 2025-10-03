@@ -185,7 +185,7 @@ const SonhoDeNatal = () => {
             Traga sua família e amigos para esta celebração especial.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-church-primary">
+            <Button asChild size="lg" variant="outline" className="border-white text-black hover:bg-white hover:text-church-primary">
               <Link to="/contato">Mais Informações</Link>
             </Button>
             <Button asChild size="lg" className="bg-church-gold text-church-dark hover:bg-church-gold/90">
