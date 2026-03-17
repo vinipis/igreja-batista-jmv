@@ -5,8 +5,8 @@ const links = [
   { label: "Acesse nosso Site", icon: Globe, href: "https://www.igrejabatistajmv.com.br" },
   { label: "Como Chegar", icon: MapPin, href: "https://maps.google.com/?cid=777447236860620356&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" },
   { label: "Podcast Depois de Cristo!", icon: Headphones, href: "https://youtu.be/fhsGuLn5PAc" },
-  { label: "Vídeos e Pregações", icon: Play, href: "https://www.youtube.com/@igrejabatistajmv" },
-  { label: "Dízimos e Ofertas", icon: Heart, href: "#" },
+  { label: "Vídeos e Pregações", icon: Play, href: "https://www.youtube.com/@igrejabatistamariavirginia/shorts" },
+  { label: "Projeto Vida & Futuro", icon: Heart, href: "https://www.instagram.com/projeto.vidaefuturo" },
   { label: "Fale Conosco", icon: Mail, href: "https://igrejabatistajmv.com.br/contato" },
 ];
 
@@ -26,7 +26,7 @@ const LinkBio = () => {
               Igreja Batista JMV
             </h1>
             <p className="text-sm text-muted-foreground mt-1 italic">
-              "Porque eu bem sei os pensamentos que tenho a vosso respeito" — Jr 29:11
+              "Lâmpada para os meus pés é tua palavra e luz, para o meu caminho."
             </p>
           </div>
         </div>
@@ -50,7 +50,7 @@ const LinkBio = () => {
         {/* Social Footer */}
         <div className="flex items-center gap-5 pt-4">
           <a
-            href="https://www.instagram.com/igrejabatistajmv"
+            href="https://www.instagram.com/igrejabatista.mv"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
@@ -63,7 +63,7 @@ const LinkBio = () => {
             </svg>
           </a>
           <a
-            href="https://www.youtube.com/@igrejabatistajmv"
+            href="https://www.youtube.com/@igrejabatistamariavirginia"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
