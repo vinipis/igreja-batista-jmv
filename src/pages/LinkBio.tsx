@@ -3,11 +3,11 @@ import logo from "@/assets/logo.png";
 
 const links = [
   { label: "Acesse nosso Site", icon: Globe, href: "https://www.igrejabatistajmv.com.br" },
-  { label: "Como Chegar", icon: MapPin, href: "https://maps.google.com" },
+  { label: "Como Chegar", icon: MapPin, href: "https://www.google.com/maps?q=--23.6368898,-46.7658104" },
   { label: "Podcast Depois de Cristo!", icon: Headphones, href: "https://youtu.be/fhsGuLn5PAc" },
   { label: "Vídeos e Pregações", icon: Play, href: "https://www.youtube.com/@igrejabatistajmv" },
   { label: "Dízimos e Ofertas", icon: Heart, href: "#" },
-  { label: "Fale Conosco", icon: Mail, href: "mailto:igreja.batistajmv@gmail.com" },
+  { label: "Fale Conosco", icon: Mail, href: "https://igrejabatistajmv.com.br/contato" },
 ];
 
 const LinkBio = () => {
