@@ -3,10 +3,10 @@ import logo from "@/assets/logo.png";
 
 const links = [
   { label: "Acesse nosso Site", icon: Globe, href: "https://www.igrejabatistajmv.com.br" },
-  { label: "Como Chegar", icon: MapPin, href: "https://maps.google.com/?cid=777447236860620356&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" },
+  { label: "Como Chegar", icon: MapPin, href: "waze://?ll=-23.636883,-46.7651654&navigate=yes" },
   { label: "Podcast Depois de Cristo!", icon: Headphones, href: "https://youtu.be/fhsGuLn5PAc" },
   { label: "Vídeos e Pregações", icon: Play, href: "https://www.youtube.com/@igrejabatistamariavirginia/shorts" },
-  { label: "Projeto Vida & Futuro", icon: Heart, href: "https://www.instagram.com/projeto.vidaefuturo" },
+  { label: "Projeto Vida & Futuro", icon: Heart, href: "instagram://user?username=projeto.vidaefuturo" },
   { label: "Fale Conosco", icon: Mail, href: "https://igrejabatistajmv.com.br/contato" },
 ];
 
@@ -50,7 +50,7 @@ const LinkBio = () => {
         {/* Social Footer */}
         <div className="flex items-center gap-5 pt-4">
           <a
-            href="https://www.instagram.com/igrejabatista.mv"
+            href="instagram://user?username=igrejabatista.mv"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
