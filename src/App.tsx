@@ -13,6 +13,7 @@ import PodcastDepoisDeCristo from "./pages/PodcastDepoisDeCristo";
 import Eventos from "./pages/Eventos";
 import Contato from "./pages/Contato";
 import Sitemap from "./pages/Sitemap";
+import LinkBio from "./pages/LinkBio";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,21 +24,13 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/quem-somos" element={<QuemSomos />} />
-            <Route path="/ministerios" element={<Ministerios />} />
-            <Route path="/projeto-vida-futuro" element={<ProjetoVidaFuturo />} />
-            <Route path="/sonho-de-natal" element={<SonhoDeNatal />} />
-            <Route path="/podcast-depois-de-cristo" element={<PodcastDepoisDeCristo />} />
-            <Route path="/eventos" element={<Eventos />} />
-            <Route path="/contato" element={<Contato />} />
-            <Route path="/sitemap" element={<Sitemap />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
+        <Routes>
+          {/* Link in Bio - sem Layout (página standalone) */}
+          <Route path="/link" element={<LinkBio />} />
+
+          {/* Páginas com Layout */}
+          <Route element={<Layout><Routes><Route path="/" element={<Index />} /><Route path="/quem-somos" element={<QuemSomos />} /><Route path="/ministerios" element={<Ministerios />} /><Route path="/projeto-vida-futuro" element={<ProjetoVidaFuturo />} /><Route path="/sonho-de-natal" element={<SonhoDeNatal />} /><Route path="/podcast-depois-de-cristo" element={<PodcastDepoisDeCristo />} /><Route path="/eventos" element={<Eventos />} /><Route path="/contato" element={<Contato />} /><Route path="/sitemap" element={<Sitemap />} /><Route path="*" element={<NotFound />} /></Routes></Layout>} path="*" />
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
