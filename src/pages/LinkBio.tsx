@@ -3,7 +3,7 @@ import logo from "@/assets/logo.png";
 
 const links = [
   { label: "Acesse nosso Site", icon: Globe, href: "https://www.igrejabatistajmv.com.br" },
-  { label: "Como Chegar", icon: MapPin, href: "https://www.google.com/maps?q=--23.6368898,-46.7658104" },
+  { label: "Como Chegar", icon: MapPin, href: "https://maps.google.com/?cid=777447236860620356&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" },
   { label: "Podcast Depois de Cristo!", icon: Headphones, href: "https://youtu.be/fhsGuLn5PAc" },
   { label: "Vídeos e Pregações", icon: Play, href: "https://www.youtube.com/@igrejabatistajmv" },
   { label: "Dízimos e Ofertas", icon: Heart, href: "#" },
