@@ -1,3 +1,14 @@
+#!/bin/bash
+# Script de bootstrap UNICO (rodar manualmente, uma vez, ao provisionar um
+# servidor novo do zero). Gera um nginx.conf HTTP-only para permitir o
+# desafio ACME do Certbot ANTES de existir certificado TLS.
+#
+# NAO e usado em runtime normal - o nginx.conf real e permanente e
+# infra/web/default.https.conf, montado via bind-mount pelo docker-compose.yml.
+#
+# Depois de obter o certificado com certbot, trocar para
+# infra/web/default.https.conf e reiniciar o container `web`.
+
 sudo tee /home/ubuntu/igreja-batista-jmv/infra/web/nginx.http.conf >/dev/null <<'NGINX'
 user  nginx;
 worker_processes  auto;
