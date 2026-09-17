@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -52,6 +53,11 @@ const PodcastDepoisDeCristo = () => {
 
   return (
     <div className="py-16 lg:py-24">
+      <Seo
+        title="Podcast Depois de Cristo | Igreja Batista Jardim Maria Virginia"
+        description="Ouça o podcast Depois de Cristo da Igreja Batista JMV, com conversas e reflexões sobre fé e vida cristã."
+        path="/podcast-depois-de-cristo"
+      />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center space-y-6 mb-16">

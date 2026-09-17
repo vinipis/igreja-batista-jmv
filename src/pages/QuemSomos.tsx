@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -35,6 +36,11 @@ const QuemSomos = () => {
 
   return (
     <div className="py-16 lg:py-24">
+      <Seo
+        title="Quem Somos | Igreja Batista Jardim Maria Virginia"
+        description="Conheça a história, os valores e a liderança da Igreja Batista Jardim Maria Virginia."
+        path="/quem-somos"
+      />
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <div className="text-center space-y-6 mb-16">

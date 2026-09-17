@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -31,6 +32,11 @@ const SonhoDeNatal = () => {
 
   return (
     <div className="py-16 lg:py-24">
+      <Seo
+        title="Sonho de Natal | Igreja Batista Jardim Maria Virginia"
+        description="Conheça a campanha Sonho de Natal da Igreja Batista JMV e saiba como participar ou ajudar."
+        path="/sonho-de-natal"
+      />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center space-y-6 mb-16">

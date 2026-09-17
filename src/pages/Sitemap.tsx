@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Home, Users, BookOpen, Calendar, Phone, Star, Heart, Mic } from "lucide-react";
@@ -41,6 +42,11 @@ const Sitemap = () => {
 
   return (
     <div className="py-16 lg:py-24">
+      <Seo
+        title="Mapa do Site | Igreja Batista Jardim Maria Virginia"
+        description="Veja todas as páginas do site da Igreja Batista Jardim Maria Virginia."
+        path="/sitemap"
+      />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center space-y-6 mb-16">

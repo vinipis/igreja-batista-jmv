@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -30,6 +31,11 @@ const ProjetoVidaFuturo = () => {
 
   return (
     <div className="py-16 lg:py-24">
+      <Seo
+        title="Projeto Vida & Futuro | Igreja Batista Jardim Maria Virginia"
+        description="Conheça o Projeto Vida & Futuro da Igreja Batista JMV e como ele transforma vidas na nossa comunidade."
+        path="/projeto-vida-futuro"
+      />
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <div className="text-center space-y-6 mb-16">

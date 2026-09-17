@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -73,6 +74,11 @@ const Ministerios = () => {
 
   return (
     <div className="py-16 lg:py-24">
+      <Seo
+        title="Ministérios | Igreja Batista Jardim Maria Virginia"
+        description="Conheça os ministérios da Igreja Batista JMV e descubra como participar e servir junto com a nossa família."
+        path="/ministerios"
+      />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center space-y-6 mb-16">

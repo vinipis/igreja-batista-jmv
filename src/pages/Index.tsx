@@ -1,3 +1,4 @@
+import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -38,6 +39,11 @@ const Index = () => {
 
   return (
     <>
+      <Seo
+        title="Igreja Batista Jardim Maria Virginia | Uma Igreja Leve e Profunda"
+        description="Igreja Batista JMV - Uma igreja que ama, cuida e proclama que só Jesus pode curar. Venha nos conhecer e fazer parte da nossa família."
+        path="/"
+      />
       {/* Hero Section */}
       <section className="relative bg-gradient-hero text-white py-20 lg:py-32">
         <div className="container mx-auto px-4">

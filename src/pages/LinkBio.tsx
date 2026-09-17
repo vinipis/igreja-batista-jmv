@@ -1,4 +1,5 @@
 import { Globe, MapPin, Headphones, Play, Heart, Mail } from "lucide-react";
+import Seo from "@/components/Seo";
 import logo from "@/assets/logo.png";
 
 const links = [
@@ -13,6 +14,12 @@ const links = [
 const LinkBio = () => {
   return (
     <div className="min-h-screen bg-[hsl(30,20%,97%)] flex items-center justify-center px-4 py-10">
+      <Seo
+        title="Links | Igreja Batista Jardim Maria Virginia"
+        description="Todos os links importantes da Igreja Batista Jardim Maria Virginia em um só lugar."
+        path="/link"
+        noindex
+      />
       <div className="w-full max-w-md flex flex-col items-center gap-6">
         {/* Header */}
         <div className="flex flex-col items-center gap-3 text-center">

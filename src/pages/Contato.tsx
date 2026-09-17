@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Seo from "@/components/Seo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -105,6 +106,11 @@ const Contato = () => {
 
   return (
     <div className="py-16 lg:py-24">
+      <Seo
+        title="Contato | Igreja Batista Jardim Maria Virginia"
+        description="Fale com a Igreja Batista JMV. Envie sua mensagem, pedido de oração ou dúvida e entraremos em contato."
+        path="/contato"
+      />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center space-y-6 mb-16">

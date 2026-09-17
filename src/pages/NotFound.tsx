@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Home, Search, MessageCircle } from "lucide-react";
@@ -14,6 +15,12 @@ const NotFound = () => {
 
   return (
     <div className="min-h-[60vh] flex items-center justify-center">
+      <Seo
+        title="Página não encontrada | Igreja Batista Jardim Maria Virginia"
+        description="A página que você está procurando não existe."
+        path={location.pathname}
+        noindex
+      />
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto text-center space-y-8">
           <div className="space-y-4">
