@@ -10,21 +10,6 @@ import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 
-// no topo do arquivo
-const GA_MEASUREMENT_ID = "G-2C9348S1JX"; // seu ID (opcional no event)
-
-// helper
-const track = (name: string, params?: Record<string, any>) => {
-  const w = window as any;
-  if (typeof window !== "undefined" && w.gtag) {
-    const payload = { ...(params || {}), debug_mode: true, send_to: GA_MEASUREMENT_ID };
-    console.debug("[GA4] event:", name, payload);
-    w.gtag("event", name, payload);
-  } else {
-    console.warn("[GA4] gtag ainda não disponível");
-  }
-};
-
 const Contato = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -84,17 +69,6 @@ const Contato = () => {
         throw new Error("Erro ao enviar mensagem");
       }
 
-      // 3. evento GA4
-      const track = (name: string, params?: Record<string, any>) => {
-        if (typeof window !== "undefined" && (window as any).gtag) {
-          console.log("[GA4] event:", name, params); // ajuda a ver no console
-          (window as any).gtag("event", name, params || {});
-        } else {
-          console.warn("[GA4] gtag não disponível no window");
-        }
-      };
-
-      // 4. feedback p/ usuário
       toast({
         title: "Mensagem enviada com sucesso!",
         description: "Entraremos em contato em breve. Que Deus abençoe!",
@@ -305,7 +279,7 @@ const Contato = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="font-medium">Pequenos Grupos</span>
-                  <span className="text-muted-foreground">Quinzenalmnete</span>
+                  <span className="text-muted-foreground">Quinzenalmente</span>
                 </div>
               </CardContent>
             </Card>
